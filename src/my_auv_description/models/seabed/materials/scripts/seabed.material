@@ -1,0 +1,23 @@
+material Seabed/Diffuse
+{
+  technique
+  {
+    pass
+    {
+      cull_hardware none
+      cull_software none
+      
+      ambient 1.0 1.0 1.0 1.0
+      diffuse 1.0 1.0 1.0 1.0
+      specular 0.1 0.1 0.1 1.0 12.5
+
+      texture_unit
+      {
+        texture seabed_basecolor.png
+        normal_map seabed_normal.png
+        filtering anisotropic
+        max_anisotropy 16
+      }
+    }
+  }
+}

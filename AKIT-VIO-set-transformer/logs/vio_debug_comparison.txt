@@ -1,0 +1,1 @@
+timestamp, x_vio, y_vio, z_vio, x_gt, y_gt, z_gt, error_pos, n_matches, innov_norm

@@ -1,0 +1,26 @@
+# Blender 5.0.1 MTL File
+# Compatible with Gazebo Classic
+
+newmtl Material.001
+
+# Ambient color
+Ka 1.0 1.0 1.0
+
+# Diffuse color (IMPORTANT – multiplies texture)
+Kd 1.0 1.0 1.0
+
+# Specular color (keep low for seabed)
+Ks 0.1 0.1 0.1
+
+# Opacity (1 = fully opaque)
+d 1.0
+
+# Illumination model (ambient + diffuse + specular)
+illum 2
+
+# Diffuse texture (this is what Gazebo actually uses)
+map_Kd ../materials/textures/seabed_basecolor.png
+
+# Normal / bump map (Gazebo support is limited but safe to include)
+map_Bump -bm 1.0 ../materials/textures/seabed_normal.png
+

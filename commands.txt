@@ -1,0 +1,43 @@
+launch world 
+cd uuv_ws
+source devel/setup.bash
+roslaunch gazebo_ros empty_world.launch
+
+auv launch
+roslaunch lauv_gazebo start_demo_auv_control.launch   world:=my_terrain_world   x:=0.0   y:=0.0   z:=-0.0
+
+propeller karangan
+rosparam set /lauv/thruster_manager/update_rate 50
+roslaunch uuv_thruster_manager thruster_manager.launch uuv_name:=lauv model_name:=lauv  
+rostopic pub -r 10 /lauv/thruster_manager/input geometry_msgs/Wrench "{force: {x: 50.0, y: 0.0, z: 0.0}, torque: {x: 0.0, y: 0.0, z: 0.0}}"
+
+keyboard control
+rrun uuv_teleop vehicle_keyboard_teleop.py --name lauv
+or
+ROS_NAMESPACE=lauv rosrun uuv_teleop vehicle_keyboard_teleop.py --name lauv
+==============================================================
+1st terminal
+roslaunch uuv_gazebo_worlds ocean_waves.launch
+2nd terminal 
+source devel/setup.bash
+
+roslaunch lauv_gazebo start_demo_auv_control.launch   world:=my_terrain_world   x:=0.0   y:=0.0   z:=-0.0
+
+roslaunch lauv_control start_auv_trajectory_control.launch \
+    uuv_name:=lauv \
+    max_thrust:=200 \
+    thruster_topic:=thrusters/0/input
+    
+    
+    
+    
+    
+//Source of the Image
+
+The image you see in rqt_image_view is a direct feed from Gazebo.
+
+    Gazebo is the physics engine generating the "truth" of the environment.
+
+    RViz is just a 3D visualizer for the data Gazebo publishes.
+
+    Because you are looking at the topic /lauv/lauv/camerafront/camera_image, you are seeing what the virtual camera sensor "sees" inside the Gazebo simulation world

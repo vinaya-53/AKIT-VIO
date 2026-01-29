@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="my_terrain_world">
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+        <uri>model://uuv_world_plugins/ocean_box</uri>
+        <name>ocean_box</name>
+        <pose>0 0 0 0 0 0</pose> 
+    </include>
+
+    <include>
+        <uri>model://mangalia_coast</uri>
+        <name>mangalia_terrain</name>
+        <pose>0 0 0 0 0 0</pose>
+    </include>
+
+  <!-- <scene>
+      <fog>
+        <color>0.0 0.2 0.4</color>
+        <type>linear</type>
+        <start>10</start>
+        <end>25</end>
+      </fog>
+    </scene> -->
+
+  </world>
+</sdf>

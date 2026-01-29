@@ -1,0 +1,4 @@
+my_auv_description
+/home/svg/uuv_ws/devel/.private/my_auv_description/share/my_auv_description/cmake/my_auv_descriptionConfig.cmake /home/svg/uuv_ws/devel/share/my_auv_description/cmake/my_auv_descriptionConfig.cmake
+/home/svg/uuv_ws/devel/.private/my_auv_description/share/my_auv_description/cmake/my_auv_descriptionConfig-version.cmake /home/svg/uuv_ws/devel/share/my_auv_description/cmake/my_auv_descriptionConfig-version.cmake
+/home/svg/uuv_ws/devel/.private/my_auv_description/lib/pkgconfig/my_auv_description.pc /home/svg/uuv_ws/devel/lib/pkgconfig/my_auv_description.pc

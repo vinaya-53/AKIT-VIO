@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="fish">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <pose>0 0 0 0 1.5708 1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://fish/meshes/fish.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://fish/materials/scripts</uri>
+            <uri>model://fish/materials/textures</uri>
+            <name>Fish/Diffuse</name>
+          </script>
+        </material>
+      </visual>
+
+      <collision name="collision">
+        <pose>0 0 0 0 1.5708 1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://fish/meshes/fish.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

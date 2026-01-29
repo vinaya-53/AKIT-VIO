@@ -1,0 +1,4 @@
+uuv_simulator/uuv_gazebo
+/home/svg/uuv_ws/devel/.private/uuv_gazebo/share/uuv_gazebo/cmake/uuv_gazeboConfig-version.cmake /home/svg/uuv_ws/devel/share/uuv_gazebo/cmake/uuv_gazeboConfig-version.cmake
+/home/svg/uuv_ws/devel/.private/uuv_gazebo/share/uuv_gazebo/cmake/uuv_gazeboConfig.cmake /home/svg/uuv_ws/devel/share/uuv_gazebo/cmake/uuv_gazeboConfig.cmake
+/home/svg/uuv_ws/devel/.private/uuv_gazebo/lib/pkgconfig/uuv_gazebo.pc /home/svg/uuv_ws/devel/lib/pkgconfig/uuv_gazebo.pc

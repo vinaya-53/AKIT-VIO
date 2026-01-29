@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="coral">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://coral/meshes/coral.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://coral/materials/scripts</uri>
+            <uri>model://coral/materials/textures</uri>
+            <name>Coral/Diffuse</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://coral/meshes/coral.obj</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

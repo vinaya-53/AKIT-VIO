@@ -1,0 +1,8 @@
+prefix=/home/svg/uuv_ws/install
+
+Name: lauv_control
+Description: Description of lauv_control
+Version: 0.1.6
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

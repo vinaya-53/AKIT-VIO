@@ -1,0 +1,8 @@
+prefix=/home/svg/uuv_ws/install
+
+Name: my_uuv_launchers
+Description: Description of my_uuv_launchers
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

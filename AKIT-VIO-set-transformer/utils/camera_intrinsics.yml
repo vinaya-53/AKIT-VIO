@@ -1,0 +1,34 @@
+%YAML:1.0
+---
+# Camera Matrix (3x3)
+# [407.0646, 0, 384.5]
+# [0, 407.0646, 246.5]
+# [0, 0, 1]
+camera_matrix: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ 407.0646129842357, 0.0, 384.5, 
+           0.0, 407.0646129842357, 246.5, 
+           0.0, 0.0, 1.0 ]
+
+# Distortion Coefficients (5x1)
+# Gazebo plumb_bob model with all zeros
+distortion_coefficients: !!opencv-matrix
+   rows: 5
+   cols: 1
+   dt: d
+   data: [ 0.0, 0.0, 0.0, 0.0, 0.0 ]
+
+# Actual resolution from rostopic
+image_width: 768
+image_height: 492
+
+# Projection Matrix (3x4)
+projection_matrix: !!opencv-matrix
+   rows: 3
+   cols: 4
+   dt: d
+   data: [ 407.0646129842357, 0.0, 384.5, 0.0,
+           0.0, 407.0646129842357, 246.5, 0.0,
+           0.0, 0.0, 1.0, 0.0 ]

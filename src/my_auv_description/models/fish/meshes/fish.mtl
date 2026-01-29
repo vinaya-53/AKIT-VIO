@@ -1,0 +1,17 @@
+# Blender 5.0.1 MTL File
+# Path: fish/meshes/fish.mtl
+
+newmtl 02_-_Default
+Ns 1000.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+# Diffuse Texture (Color)
+map_Kd ../materials/textures/fish_difusa.jpg
+
+# Bump/Normal Map
+map_Bump -bm 0.200000 ../materials/textures/fish_bump.jpg

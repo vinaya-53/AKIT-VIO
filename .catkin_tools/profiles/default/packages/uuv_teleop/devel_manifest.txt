@@ -1,0 +1,6 @@
+uuv_simulator/uuv_teleop
+/home/svg/uuv_ws/devel/.private/uuv_teleop/share/uuv_teleop/cmake/uuv_teleopConfig-version.cmake /home/svg/uuv_ws/devel/share/uuv_teleop/cmake/uuv_teleopConfig-version.cmake
+/home/svg/uuv_ws/devel/.private/uuv_teleop/share/uuv_teleop/cmake/uuv_teleopConfig.cmake /home/svg/uuv_ws/devel/share/uuv_teleop/cmake/uuv_teleopConfig.cmake
+/home/svg/uuv_ws/devel/.private/uuv_teleop/lib/uuv_teleop/vehicle_teleop.py /home/svg/uuv_ws/devel/lib/uuv_teleop/vehicle_teleop.py
+/home/svg/uuv_ws/devel/.private/uuv_teleop/lib/uuv_teleop/finned_uuv_teleop.py /home/svg/uuv_ws/devel/lib/uuv_teleop/finned_uuv_teleop.py
+/home/svg/uuv_ws/devel/.private/uuv_teleop/lib/pkgconfig/uuv_teleop.pc /home/svg/uuv_ws/devel/lib/pkgconfig/uuv_teleop.pc

@@ -1,0 +1,4 @@
+my_uuv_launchers
+/home/svg/uuv_ws/devel/.private/my_uuv_launchers/share/my_uuv_launchers/cmake/my_uuv_launchersConfig-version.cmake /home/svg/uuv_ws/devel/share/my_uuv_launchers/cmake/my_uuv_launchersConfig-version.cmake
+/home/svg/uuv_ws/devel/.private/my_uuv_launchers/share/my_uuv_launchers/cmake/my_uuv_launchersConfig.cmake /home/svg/uuv_ws/devel/share/my_uuv_launchers/cmake/my_uuv_launchersConfig.cmake
+/home/svg/uuv_ws/devel/.private/my_uuv_launchers/lib/pkgconfig/my_uuv_launchers.pc /home/svg/uuv_ws/devel/lib/pkgconfig/my_uuv_launchers.pc

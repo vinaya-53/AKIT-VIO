@@ -1,0 +1,43 @@
+<launch>
+
+  <!-- Start Gazebo with a valid world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find my_auv_description)/worlds/empty.world"/>
+    <arg name="paused" value="false"/>
+  </include>
+
+  <!-- Load robot description -->
+  <param name="robot_description"
+         command="$(find xacro)/xacro $(find my_auv_description)/urdf/my_auv.urdf.xacro"/>
+
+  <!-- Spawn into Gazebo -->
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_my_auv" output="screen"
+        args="-urdf -param robot_description -model my_auv -x 0 -y 0 -z 1"/>
+
+</launch>
+<launch>
+
+  <!-- Start Gazebo -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+  <!-- Load URDF -->
+  <param name="robot_description"
+       command="$(find xacro)/xacro --inorder $(find my_auv_description)/urdf/my_auv.urdf.xacro" />
+
+<!-- Wait for Gazebo -->
+<node pkg="roslaunch" type="roslaunch" name="delay" args="$(find roslaunch)/scripts/wait_for_master.py /gazebo/set_physics_properties" />
+
+
+  <!-- Spawn robot -->
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_my_auv" output="screen"
+      args="-urdf -param robot_description -model my_auv -x 0 -y 0 -z 2"
+      required="true" >
+    <rosparam>
+      use_sim_time: true
+    </rosparam>
+</node>
+
+
+
+</launch>
+

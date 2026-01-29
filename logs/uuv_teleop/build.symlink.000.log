@@ -1,0 +1,5 @@
+Symlinking /home/svg/uuv_ws/devel/share/uuv_teleop/cmake/uuv_teleopConfig-version.cmake
+Symlinking /home/svg/uuv_ws/devel/share/uuv_teleop/cmake/uuv_teleopConfig.cmake
+Symlinking /home/svg/uuv_ws/devel/lib/uuv_teleop/vehicle_teleop.py
+Symlinking /home/svg/uuv_ws/devel/lib/uuv_teleop/finned_uuv_teleop.py
+Symlinking /home/svg/uuv_ws/devel/lib/pkgconfig/uuv_teleop.pc

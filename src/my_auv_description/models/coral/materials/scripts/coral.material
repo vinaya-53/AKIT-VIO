@@ -1,0 +1,21 @@
+material Coral/Diffuse
+{
+  technique
+  {
+    pass
+    {
+      cull_hardware none
+      cull_software none
+      
+      ambient 1.0 1.0 1.0 1.0
+      diffuse 1.0 1.0 1.0 1.0
+
+      texture_unit
+      {
+        texture coral.png
+        filtering anisotropic
+        max_anisotropy 16
+      }
+    }
+  }
+}

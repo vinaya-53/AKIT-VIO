@@ -1,0 +1,28 @@
+digraph G {
+"lauv/base_link" -> "lauv/base_link_ned"[label="Broadcaster: /gazebo\nAverage rate: 665.545 Hz\nMost recent transform: 610.248 ( 0.000 sec old)\nBuffer length: 2.377 sec\n"];
+"lauv/lauv/base_link" -> "lauv/lauv/camerafront_link"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/camerafront_link" -> "lauv/lauv/camerafront_link_optical"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/base_link" -> "lauv/lauv/cc_sensor_link"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/base_link" -> "lauv/lauv/dvl_link"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/dvl_link" -> "lauv/lauv/dvl_sonar0_link"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/dvl_link" -> "lauv/lauv/dvl_sonar1_link"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/dvl_link" -> "lauv/lauv/dvl_sonar2_link"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/dvl_link" -> "lauv/lauv/dvl_sonar3_link"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/base_link" -> "lauv/lauv/fin0"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/base_link" -> "lauv/lauv/fin1"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/base_link" -> "lauv/lauv/fin2"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/base_link" -> "lauv/lauv/fin3"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/base_link" -> "lauv/lauv/gps_link"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/base_link" -> "lauv/lauv/imu_link"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/base_link" -> "lauv/lauv/pose_sensor_link_default"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/base_link" -> "lauv/lauv/pressure_link"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+"lauv/lauv/base_link" -> "lauv/lauv/thruster_0"[label="Broadcaster: /lauv/robot_state_publisher\nAverage rate: 10.455 Hz\nMost recent transform: 610.147 ( 0.101 sec old)\nBuffer length: 2.200 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 610.248"[ shape=plaintext ] ;
+ }->"lauv/base_link";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 610.248"[ shape=plaintext ] ;
+ }->"lauv/lauv/base_link";
+}

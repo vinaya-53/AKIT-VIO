@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="seabed">
+    <static>true</static>
+    <link name="seabed_link">
+      
+      <visual name="visual">
+        <pose>0 0 0 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://seabed/meshes/seabed_visual.obj</uri>
+            <scale>2 2 2</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://seabed/materials/scripts</uri>
+            <uri>model://seabed/materials/textures</uri>
+            <name>Seabed/Diffuse</name>
+          </script>
+        </material>
+      </visual>
+
+      <collision name="collision">
+        <pose>0 0 0 1.5708 0 0</pose> 
+        <geometry>
+          <mesh>
+            <uri>model://seabed/meshes/seabed_visual.obj</uri>
+            <scale>2 2 2</scale> 
+          </mesh>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>
