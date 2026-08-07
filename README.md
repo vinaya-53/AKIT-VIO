@@ -40,90 +40,63 @@ catkin build
 # Source the workspace
 echo "source $(pwd)/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
+
+```
 Note: This repository was initially configured 7 months ago. Some components may require updates for compatibility with current ROS/Gazebo versions. Refer to commands.txt for specific commands used during initial development.
 
 Core Components
 Vehicle Models
 The repository includes multiple underwater vehicle description packages:
-
 lauv_description: Contains URDF models with visual and collision geometry, inertial properties, and joint definitions
-
 my_auv_description: Additional vehicle models with custom configurations
-
 lauv_gazebo: Gazebo plugins, world files, and simulation parameters
 
 Control Systems
 lauv_control: Implements control algorithms including:
-
 Thrust allocation
-
 State estimation
-
 Trajectory tracking
-
 Stabilization controllers
 
 Simulation Environment
 uuv_simulator: Core simulation framework providing:
-
 Hydrodynamic models
-
 Underwater physics
-
 Sensor simulation (IMU, pressure, DVL)
-
 Environmental effects (currents, waves)
 
 Coordinate Frames
 The frames.gv and frames.pdf files illustrate the coordinate frame hierarchy used in the simulation:
-
 world: Global reference frame
-
 base_link: Vehicle body frame
-
 imu_link: IMU sensor frame
-
 camera_link: Camera frame for VIO
 
 Development
 Adding New Vehicle Models
 Create new description package
-
 Define URDF/XACRO model
-
 Configure Gazebo plugins
-
 Create launch files
-
 Update CMakeLists.txt
 
 Modifying Controllers
 Locate controller source in lauv_control
-
 Modify gains in configuration files
-
 Rebuild package
-
 Test with simulation
 
 Extending VIO Capabilities
 Add new sensor plugins
-
 Implement data processing nodes
-
 Configure transformer package
-
 Update launch files
 
 Additional Resources
 ROS Noetic Documentation: http://wiki.ros.org/noetic
-
 Gazebo Tutorials: http://gazebosim.org/tutorials
-
 UUV Simulator: https://github.com/uuvsimulator/uuv_simulator
-
 ROS Control: http://wiki.ros.org/ros_control
-
 TF2 Library: http://wiki.ros.org/tf2
 
 License
@@ -134,11 +107,6 @@ vinaya-53 - Initial work and repository setup
 
 Acknowledgments
 UUV Simulator development team
-
 ROS and Gazebo communities
-
 Open-source robotics contributors
 
-# Initialize rosdep
-sudo rosdep init
-rosdep update
