@@ -1,180 +1,144 @@
-```markdown
-# AKIT-VIO: AUV Simulation Environment
+Underwater Vehicle Simulation Environment for VIO
 
-## 📋 Overview
-This repository contains a comprehensive simulation environment for Autonomous Underwater Vehicles (AUVs) using ROS (Robot Operating System) and Gazebo. The simulation integrates UUV (Unmanned Underwater Vehicle) simulators with custom control and description packages for underwater robotics research and development.
+## Overview
+This repository provides a simulation environment for underwater vehicle research and development, with a focus on Visual-Inertial Odometry (VIO) and sea modeling. The system is built on the Robot Operating System (ROS) and Gazebo simulation platform, integrating multiple underwater vehicle models with custom control algorithms and environmental representations.
 
-## 🚀 Repository Structure
-```
-AKIT-VIO/
-├── src/
-│   ├── lauv_control/          # Control algorithms for LAUV
-│   ├── lauv_description/      # URDF/XACRO descriptions for LAUV
-│   ├── lauv_gazebo/           # Gazebo simulation files for LAUV
-│   ├── my_auv_description/    # Custom AUV description files
-│   ├── my_auv_launchers/      # Launch files for custom AUV
-│   ├── uuv_simulator/         # Core UUV simulator package
-│   └── CMakeLists.txt         # Build configuration
-├── AKIT-VIO-set-transformer/  # Data transformation utilities
-├── uuv_launchers/             # Main launch configurations
-├── build/                     # Build directory
-├── devel/                     # Development workspace
-├── logs/                      # Log files
-├── .catkin_tools/             # Catkin tools configuration
-├── .catkin_workspace/         # Catkin workspace metadata
-├── commands.txt               # Useful ROS commands reference
-├── frames.gv                  # Frame transformation graph
-└── frames.pdf                 # Visualization of coordinate frames
-```
+## System Requirements
+- **Operating System**: Ubuntu 20.04 LTS
+- **ROS Distribution**: ROS Noetic Ninjemys
+- **Simulation Platform**: Gazebo 11
+- **Build System**: Catkin Tools
 
-## 🛠️ Prerequisites
-- **ROS** (Kinetic/Melodic/Noetic recommended)
-- **Gazebo** (≥ 9.0)
-- **Catkin Tools** for workspace management
-- **UUV Simulator** dependencies:
-  ```bash
-  sudo apt-get install ros-<distro>-uuv-simulator
-  ```
 
-## 📦 Installation
+## Installation
 
-1. **Clone the repository:**
+### Prerequisites Installation
 ```bash
+# Install ROS Noetic
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+sudo apt update
+sudo apt install ros-noetic-desktop-full
+
+# Install Gazebo 11
+sudo apt install ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros2-control
+
+# Install Catkin Tools
+sudo apt install python3-catkin-tools python3-rosdep python3-rosinstall
+
+
+# Clone the repository
 git clone <repository-url>
 cd AKIT-VIO
-```
 
-2. **Install dependencies:**
-```bash
-rosdep update
+# Install workspace dependencies
 rosdep install --from-paths src --ignore-src -r -y
-```
 
-3. **Build the workspace:**
-```bash
+# Build the workspace
 catkin build
-```
 
-4. **Source the workspace:**
-```bash
-source devel/setup.bash
-```
+# Source the workspace
+echo "source $(pwd)/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+Note: This repository was initially configured 7 months ago. Some components may require updates for compatibility with current ROS/Gazebo versions. Refer to commands.txt for specific commands used during initial development.
 
-## 🏊 AUV Models
+Core Components
+Vehicle Models
+The repository includes multiple underwater vehicle description packages:
 
-### LAUV (Light Autonomous Underwater Vehicle)
-- **Control Package**: `lauv_control` - Implements control algorithms for LAUV navigation
-- **Description Package**: `lauv_description` - URDF models with visual and collision geometry
-- **Gazebo Package**: `lauv_gazebo` - Simulation plugins and world files
+lauv_description: Contains URDF models with visual and collision geometry, inertial properties, and joint definitions
 
-### Custom AUV (my_auv)
-- **Description Package**: Custom AUV model with proprietary design
-- **Launchers**: Pre-configured launch files for quick deployment
+my_auv_description: Additional vehicle models with custom configurations
 
-## 🚀 Launching Simulations
+lauv_gazebo: Gazebo plugins, world files, and simulation parameters
 
-### Basic Simulation
-```bash
-# Launch LAUV in default world
-roslaunch lauv_gazebo lauv_empty_world.launch
+Control Systems
+lauv_control: Implements control algorithms including:
 
-# Launch custom AUV
-roslaunch my_auv_launchers my_auv_launch.launch
-```
+Thrust allocation
 
-### Full UUV Simulation
-```bash
-# Launch UUV simulator with integrated controls
-roslaunch uuv_launchers uuv_simulator.launch
-```
+State estimation
 
-### Using the Transformer
-```bash
-# Launch the set transformer for coordinate transformations
-roslaunch AKIT-VIO-set-transformer transformer.launch
-```
+Trajectory tracking
 
-## 📊 Coordinate Frames
-The `frames.gv` and `frames.pdf` files visualize the coordinate frames used in the simulation:
-- **World Frame**: Global reference frame
-- **Base Link**: AUV's body frame
-- **Sensor Frames**: Various sensor coordinate systems
-- **Transformation Tree**: Complete TF tree showing frame relationships
+Stabilization controllers
 
-## 🎮 Controls & Teleoperation
-```bash
-# Teleop with keyboard
-rosrun uuv_control uuv_keyboard_teleop
+Simulation Environment
+uuv_simulator: Core simulation framework providing:
 
-# For thrust control
-rosrun uuv_control uuv_thruster_manager
-```
+Hydrodynamic models
 
-## 📡 Key ROS Topics
-- `/cmd_vel` - Velocity commands
-- `/thrusters` - Thruster control inputs
-- `/odom` - Odometry data
-- `/tf` - Transform frames
-- `/imu` - IMU sensor data
+Underwater physics
 
-## 🔧 Configuration Files
-- **Launch files**: Located in `*_launchers` and `uuv_launchers` directories
-- **URDF models**: Found in `*_description` packages
-- **World files**: Gazebo world configurations in `*_gazebo` packages
+Sensor simulation (IMU, pressure, DVL)
 
-## 📝 Useful Commands
-Reference the `commands.txt` file for commonly used ROS commands:
-```bash
-# View TF tree
-rosrun tf view_frames
+Environmental effects (currents, waves)
 
-# List all ROS topics
-rostopic list
+Coordinate Frames
+The frames.gv and frames.pdf files illustrate the coordinate frame hierarchy used in the simulation:
 
-# Echo specific topic
-rostopic echo /odom
+world: Global reference frame
 
-# Visualize in RViz
-rviz
-```
+base_link: Vehicle body frame
 
-## 🤝 Contributing
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+imu_link: IMU sensor frame
 
-## 📄 License
-[Add your license information here]
+camera_link: Camera frame for VIO
 
-## 👥 Authors
-- vinaya-53 - Initial work
+Development
+Adding New Vehicle Models
+Create new description package
 
-## 🙏 Acknowledgments
-- UUV Simulator developers
-- LAUV community
-- ROS/Gazebo open-source community
+Define URDF/XACRO model
 
-## 📚 Additional Resources
-- **UUV Simulator Documentation**: [Link to documentation]
-- **ROS Wiki**: [http://wiki.ros.org](http://wiki.ros.org)
-- **Gazebo Tutorials**: [http://gazebosim.org/tutorials](http://gazebosim.org/tutorials)
+Configure Gazebo plugins
 
----
-**Note**: This project was originally set up 7 months ago. Some configurations may need updating for newer ROS/Gazebo versions. Refer to the `commands.txt` file for specific commands used during development.
-```
+Create launch files
 
-This README provides a comprehensive overview of your project even though you don't remember all the details. I've made some assumptions based on typical ROS/UUV project structures:
+Update CMakeLists.txt
 
-1. **LAUV packages**: Standard LAUV (Light Autonomous Underwater Vehicle) packages for simulation
-2. **Custom AUV**: Your own AUV model
-3. **UUV Simulator**: Core underwater simulation framework
-4. **TF Transformer**: Something related to coordinate frame transformations
+Modifying Controllers
+Locate controller source in lauv_control
 
-You may want to:
-- Update the ROS distribution (`<distro>` placeholders)
-- Add specific launch file names if you remember them
-- Add license information
-- Include specific hardware details if applicable
-- Add a "Known Issues" section if you remember any problems
+Modify gains in configuration files
+
+Rebuild package
+
+Test with simulation
+
+Extending VIO Capabilities
+Add new sensor plugins
+
+Implement data processing nodes
+
+Configure transformer package
+
+Update launch files
+
+Additional Resources
+ROS Noetic Documentation: http://wiki.ros.org/noetic
+
+Gazebo Tutorials: http://gazebosim.org/tutorials
+
+UUV Simulator: https://github.com/uuvsimulator/uuv_simulator
+
+ROS Control: http://wiki.ros.org/ros_control
+
+TF2 Library: http://wiki.ros.org/tf2
+
+License
+Apache-2.0
+
+Authors
+vinaya-53 - Initial work and repository setup
+
+Acknowledgments
+UUV Simulator development team
+
+ROS and Gazebo communities
+
+Open-source robotics contributors
+
+# Initialize rosdep
+sudo rosdep init
+rosdep update
